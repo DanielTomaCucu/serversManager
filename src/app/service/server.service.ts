@@ -29,7 +29,7 @@ export class ServerService {
   ping$ = (ipAddress: string) =>
     <Observable<CustomResponse>>(
       this.http
-        .get<CustomResponse>(`${this.apiUrl}/servers/ping/${ipAddress}`)
+        .get<CustomResponse>(`${this.apiUrl}/server/ping/${ipAddress}`)
         .pipe(tap(console.log), catchError(this.handleError))
     );
 
@@ -54,7 +54,7 @@ export class ServerService {
   delete$ = (serverId: number) =>
     <Observable<CustomResponse>>(
       this.http
-        .delete<CustomResponse>(`${this.apiUrl}/delete/${serverId}`)
+        .delete<CustomResponse>(`${this.apiUrl}/server/delete/${serverId}`)
         .pipe(tap(console.log), catchError(this.handleError))
     );
 
